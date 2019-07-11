@@ -15,13 +15,17 @@ class ListPersonPresenter: ListPersonPresenterProtocol {
     var dataManager: ListPersonDataManagerInputProtocol?
     var wireFrame: ListPersonWireFrameProtocol?
     
-    func getListPerson(_ page: Int) {
+    func getListPerson(_ page: String?) {
         viewController?.onLoading()
         dataManager?.peopleFetch(page)
     }
     
     func showAlert(_ message: String) {
         wireFrame?.showAlert(viewController, message)
+    }
+    
+    func openPeople(_ person: Person?) {
+        wireFrame?.showPeople(from: viewController, person: person)
     }
 }
 

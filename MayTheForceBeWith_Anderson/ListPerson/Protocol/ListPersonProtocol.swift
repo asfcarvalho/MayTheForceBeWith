@@ -15,7 +15,8 @@ protocol ListPersonViewControllerPortocol {
     
     func showPeople(_ people: ListPerson?)
     func showError(_ message: String)
-    func getNewPage()
+    func getNewPage(_ page: String?)
+    func openPeople(_ person: Person?)
     func onLoading()
     func stopLoading()
 }
@@ -25,7 +26,6 @@ protocol ListPersonViewProtocol {
     var viewController: ListPersonViewControllerPortocol? { get set }
     
     func showPeople(_ people: ListPerson?)
-    
 }
 
 protocol ListPersonWireFrameProtocol {
@@ -33,6 +33,7 @@ protocol ListPersonWireFrameProtocol {
     static func createViewController() -> UIViewController
     
     func showAlert(_ viewController: ListPersonViewControllerPortocol?, _ message: String)
+    func showPeople(from viewController: ListPersonViewControllerPortocol?, person: Person?)
 }
 
 protocol ListPersonPresenterProtocol {
@@ -41,15 +42,16 @@ protocol ListPersonPresenterProtocol {
     var dataManager: ListPersonDataManagerInputProtocol? { get set }
     var wireFrame: ListPersonWireFrameProtocol? { get set }
     
-    func getListPerson(_ page: Int)
+    func getListPerson(_ page: String?)
     func showAlert(_ message: String)
+    func openPeople(_ person: Person?)
 }
 
 protocol ListPersonDataManagerInputProtocol {
     
     var presenter: ListPersonDataManagerOutputProtocol? { get set }
     
-    func peopleFetch(_ page: Int)
+    func peopleFetch(_ page: String?)
 }
 
 protocol ListPersonDataManagerOutputProtocol: class {

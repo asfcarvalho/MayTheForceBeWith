@@ -50,11 +50,12 @@ class ListPersonView: UIView {
 extension ListPersonView: ListPersonViewProtocol {
     func showPeople(_ people: ListPerson?) {
         
-        if self.listPerson != nil {
-//            self.listPerson?.people?.
+        if let listPeople = people?.people, self.listPerson != nil {
+            self.listPerson?.people?.append(contentsOf: listPeople)
+            self.listPerson?.next = people?.next
+        }else {
+            self.listPerson = people
         }
-        
-        self.listPerson = people
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -81,7 +82,7 @@ extension ListPersonView: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = person?.name
         
         if listPerson?.next != nil, indexPath.row == (listPerson?.people?.count ?? 1) - 1 {
-            viewController?.getNewPage()
+            viewController?.getNewPage(listPerson?.next)
         }
         
         return cell
@@ -89,6 +90,8 @@ extension ListPersonView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        
+        viewController?.openPeople(listPerson?.people?[indexPath.row])
     }
     
 }

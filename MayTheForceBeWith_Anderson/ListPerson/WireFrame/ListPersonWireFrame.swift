@@ -9,8 +9,6 @@
 import UIKit
 
 class ListPersonWireFrame: ListPersonWireFrameProtocol {
-
-    
     
     class func createViewController() -> UIViewController {
         
@@ -37,4 +35,15 @@ class ListPersonWireFrame: ListPersonWireFrameProtocol {
         
     }
     
+    
+    func showPeople(from viewController: ListPersonViewControllerPortocol?, person: Person?) {
+        
+        
+        let person = PeopleWireFrame.createViewController(person)
+        
+        if let vc = viewController as? UIViewController {
+            vc.navigationController?.pushViewController(person, animated: true)
+            
+        }
+    }
 }

@@ -12,7 +12,6 @@ class ListPersonViewController: UIViewController {
     
     var presenter: ListPersonPresenterProtocol?
     var listPersonView: ListPersonViewProtocol?
-    var page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +22,19 @@ class ListPersonViewController: UIViewController {
         listPersonView?.viewController = self
         self.view = (listPersonView as? UIView) ?? UIView()
         
-        presenter?.getListPerson(1)
+        presenter?.getListPerson(nil)
     }
     
-    func getNewPage() {
-        page += 1
+    func getNewPage(_ page: String?) {
         presenter?.getListPerson(page)
     }
 }
 
 extension ListPersonViewController: ListPersonViewControllerPortocol {
+    func openPeople(_ person: Person?) {
+        presenter?.openPeople(person)
+    }
+    
     func showError(_ message: String) {
         presenter?.showAlert(message)
     }

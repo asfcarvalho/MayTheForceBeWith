@@ -10,7 +10,7 @@ import UIKit
 
 struct ListPerson: Codable {
     let count: Int?
-    let next: String?
+    var next: String?
     let previous: String?
     var people: [Person]?
     

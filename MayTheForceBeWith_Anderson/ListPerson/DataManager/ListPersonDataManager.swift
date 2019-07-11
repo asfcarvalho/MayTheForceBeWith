@@ -11,9 +11,9 @@ import UIKit
 class ListPersonDataManager: ListPersonDataManagerInputProtocol {
     weak var presenter: ListPersonDataManagerOutputProtocol?
     
-    func peopleFetch(_ page: Int) {
+    func peopleFetch(_ page: String?) {
         
-        guard let url = URL(string: "https://swapi.co/api/people/?page=" + page.description) else {
+        guard let url = URL(string: page ?? "https://swapi.co/api/people/?page=1") else {
             
             presenter?.onError(NSLocalizedString("URLError", comment: ""))
             return

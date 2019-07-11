@@ -27,6 +27,13 @@
 		10F517DB22D76FC3003584C3 /* ListPersonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517DA22D76FC3003584C3 /* ListPersonPresenter.swift */; };
 		10F517DE22D770A2003584C3 /* ListPersonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517DD22D770A2003584C3 /* ListPersonDataManager.swift */; };
 		10F517E022D77954003584C3 /* UIAlert+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517DF22D77954003584C3 /* UIAlert+custom.swift */; };
+		10F517E422D7CDA9003584C3 /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517E322D7CDA9003584C3 /* PeopleView.swift */; };
+		10F517E622D7D299003584C3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517E522D7D299003584C3 /* PeopleViewController.swift */; };
+		10F517E922D7D2D9003584C3 /* PeopleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517E822D7D2D9003584C3 /* PeopleProtocol.swift */; };
+		10F517EC22D7D372003584C3 /* PeopleWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517EB22D7D372003584C3 /* PeopleWireFrame.swift */; };
+		10F517EF22D7E06B003584C3 /* PeopleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517EE22D7E06B003584C3 /* PeopleDataManager.swift */; };
+		10F517F222D7E1A3003584C3 /* PeoplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517F122D7E1A3003584C3 /* PeoplePresenter.swift */; };
+		10F517F422D7E653003584C3 /* CheckBoxCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517F322D7E653003584C3 /* CheckBoxCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +83,13 @@
 		10F517DA22D76FC3003584C3 /* ListPersonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPersonPresenter.swift; sourceTree = "<group>"; };
 		10F517DD22D770A2003584C3 /* ListPersonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPersonDataManager.swift; sourceTree = "<group>"; };
 		10F517DF22D77954003584C3 /* UIAlert+custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlert+custom.swift"; sourceTree = "<group>"; };
+		10F517E322D7CDA9003584C3 /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
+		10F517E522D7D299003584C3 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		10F517E822D7D2D9003584C3 /* PeopleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleProtocol.swift; sourceTree = "<group>"; };
+		10F517EB22D7D372003584C3 /* PeopleWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleWireFrame.swift; sourceTree = "<group>"; };
+		10F517EE22D7E06B003584C3 /* PeopleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDataManager.swift; sourceTree = "<group>"; };
+		10F517F122D7E1A3003584C3 /* PeoplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplePresenter.swift; sourceTree = "<group>"; };
+		10F517F322D7E653003584C3 /* CheckBoxCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +140,7 @@
 		1083055B22D66E2E006830A4 /* MayTheForceBeWith_Anderson */ = {
 			isa = PBXGroup;
 			children = (
+				10F517E122D7CD8E003584C3 /* People */,
 				10F517D222D769F6003584C3 /* Model */,
 				10F517CA22D764BC003584C3 /* Util */,
 				10F517BF22D76292003584C3 /* Resources */,
@@ -206,6 +221,7 @@
 		10F517CA22D764BC003584C3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				10F517F322D7E653003584C3 /* CheckBoxCustom.swift */,
 				10F517DF22D77954003584C3 /* UIAlert+custom.swift */,
 				10F517D722D76DE0003584C3 /* Loading.swift */,
 				10F517C822D764B7003584C3 /* UIView+anchors.swift */,
@@ -237,6 +253,59 @@
 				10F517DD22D770A2003584C3 /* ListPersonDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		10F517E122D7CD8E003584C3 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				10F517F022D7E179003584C3 /* Presenter */,
+				10F517ED22D7E052003584C3 /* DataManager */,
+				10F517EA22D7D358003584C3 /* WireFrame */,
+				10F517E722D7D2C1003584C3 /* Protocol */,
+				10F517E222D7CD99003584C3 /* View */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		10F517E222D7CD99003584C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10F517E322D7CDA9003584C3 /* PeopleView.swift */,
+				10F517E522D7D299003584C3 /* PeopleViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10F517E722D7D2C1003584C3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				10F517E822D7D2D9003584C3 /* PeopleProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		10F517EA22D7D358003584C3 /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				10F517EB22D7D372003584C3 /* PeopleWireFrame.swift */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		10F517ED22D7E052003584C3 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				10F517EE22D7E06B003584C3 /* PeopleDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		10F517F022D7E179003584C3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				10F517F122D7E1A3003584C3 /* PeoplePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,17 +441,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F517EF22D7E06B003584C3 /* PeopleDataManager.swift in Sources */,
 				10F517C922D764B7003584C3 /* UIView+anchors.swift in Sources */,
+				10F517EC22D7D372003584C3 /* PeopleWireFrame.swift in Sources */,
 				10F517DE22D770A2003584C3 /* ListPersonDataManager.swift in Sources */,
 				10F517D122D768BD003584C3 /* UILabel+custom.swift in Sources */,
 				1083055F22D66E2E006830A4 /* ViewController.swift in Sources */,
 				10F517DB22D76FC3003584C3 /* ListPersonPresenter.swift in Sources */,
 				10F517D822D76DE0003584C3 /* Loading.swift in Sources */,
 				10F517BB22D75F1D003584C3 /* ListPersonProtocol.swift in Sources */,
+				10F517F222D7E1A3003584C3 /* PeoplePresenter.swift in Sources */,
 				1083055D22D66E2E006830A4 /* AppDelegate.swift in Sources */,
 				10F517D622D76A6E003584C3 /* Person.swift in Sources */,
+				10F517E622D7D299003584C3 /* PeopleViewController.swift in Sources */,
 				10F517E022D77954003584C3 /* UIAlert+custom.swift in Sources */,
 				10F517BE22D76107003584C3 /* ListPersonWireFrame.swift in Sources */,
+				10F517E422D7CDA9003584C3 /* PeopleView.swift in Sources */,
+				10F517E922D7D2D9003584C3 /* PeopleProtocol.swift in Sources */,
+				10F517F422D7E653003584C3 /* CheckBoxCustom.swift in Sources */,
 				10F517B622D75E66003584C3 /* ListPersonView.swift in Sources */,
 				10F517B822D75EB1003584C3 /* ListPersonViewController.swift in Sources */,
 				10F517D422D76A1E003584C3 /* ListPerson.swift in Sources */,

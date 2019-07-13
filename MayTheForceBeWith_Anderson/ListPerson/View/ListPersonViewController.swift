@@ -2,7 +2,7 @@
 //  ListPersonViewController.swift
 //  MayTheForceBeWith_Anderson
 //
-//  Created by Proaire on 11/07/19.
+//  Created by Anderson F Carvalho on 11/07/19.
 //  Copyright © 2019 asfcarvalho. All rights reserved.
 //
 
@@ -23,6 +23,8 @@ class ListPersonViewController: UIViewController {
         self.view = (listPersonView as? UIView) ?? UIView()
         
         presenter?.getListPerson(nil)
+        
+        view.accessibilityIdentifier = "listPersonView"
     }
     
     func getNewPage(_ page: String?) {
@@ -45,11 +47,11 @@ extension ListPersonViewController: ListPersonViewControllerPortocol {
     }
     
     func onLoading() {
-        Loading.shared.showLoading(self.view)
+        Loading.showLoading(self.view)
     }
     
     func stopLoading() {
-        Loading.shared.stopLoading()
+        Loading.stopLoading()
     }
     
     

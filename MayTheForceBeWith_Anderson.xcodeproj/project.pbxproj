@@ -34,6 +34,9 @@
 		10F517EF22D7E06B003584C3 /* PeopleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517EE22D7E06B003584C3 /* PeopleDataManager.swift */; };
 		10F517F222D7E1A3003584C3 /* PeoplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517F122D7E1A3003584C3 /* PeoplePresenter.swift */; };
 		10F517F422D7E653003584C3 /* CheckBoxCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F517F322D7E653003584C3 /* CheckBoxCustom.swift */; };
+		1959E2D422DA239C00A82A57 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959E2D322DA239C00A82A57 /* Favorite.swift */; };
+		1959E2DA22DA4AC800A82A57 /* ListPersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959E2D922DA4AC800A82A57 /* ListPersonTests.swift */; };
+		1959E2DC22DA4B7D00A82A57 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959E2DB22DA4B7D00A82A57 /* PersonTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		10F517EE22D7E06B003584C3 /* PeopleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDataManager.swift; sourceTree = "<group>"; };
 		10F517F122D7E1A3003584C3 /* PeoplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplePresenter.swift; sourceTree = "<group>"; };
 		10F517F322D7E653003584C3 /* CheckBoxCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxCustom.swift; sourceTree = "<group>"; };
+		1959E2D322DA239C00A82A57 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		1959E2D922DA4AC800A82A57 /* ListPersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPersonTests.swift; sourceTree = "<group>"; };
+		1959E2DB22DA4B7D00A82A57 /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,8 @@
 		1083057022D66E44006830A4 /* MayTheForceBeWith_AndersonTests */ = {
 			isa = PBXGroup;
 			children = (
+				1959E2D622DA49ED00A82A57 /* Person */,
+				1959E2D522DA49E000A82A57 /* ListPerson */,
 				1083057122D66E44006830A4 /* MayTheForceBeWith_AndersonTests.swift */,
 				1083057322D66E44006830A4 /* Info.plist */,
 			);
@@ -235,6 +243,7 @@
 			children = (
 				10F517D322D76A1E003584C3 /* ListPerson.swift */,
 				10F517D522D76A6E003584C3 /* Person.swift */,
+				1959E2D322DA239C00A82A57 /* Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +315,22 @@
 				10F517F122D7E1A3003584C3 /* PeoplePresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1959E2D522DA49E000A82A57 /* ListPerson */ = {
+			isa = PBXGroup;
+			children = (
+				1959E2D922DA4AC800A82A57 /* ListPersonTests.swift */,
+			);
+			path = ListPerson;
+			sourceTree = "<group>";
+		};
+		1959E2D622DA49ED00A82A57 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				1959E2DB22DA4B7D00A82A57 /* PersonTests.swift */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +483,7 @@
 				10F517BE22D76107003584C3 /* ListPersonWireFrame.swift in Sources */,
 				10F517E422D7CDA9003584C3 /* PeopleView.swift in Sources */,
 				10F517E922D7D2D9003584C3 /* PeopleProtocol.swift in Sources */,
+				1959E2D422DA239C00A82A57 /* Favorite.swift in Sources */,
 				10F517F422D7E653003584C3 /* CheckBoxCustom.swift in Sources */,
 				10F517B622D75E66003584C3 /* ListPersonView.swift in Sources */,
 				10F517B822D75EB1003584C3 /* ListPersonViewController.swift in Sources */,
@@ -469,6 +495,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1959E2DA22DA4AC800A82A57 /* ListPersonTests.swift in Sources */,
+				1959E2DC22DA4B7D00A82A57 /* PersonTests.swift in Sources */,
 				1083057222D66E44006830A4 /* MayTheForceBeWith_AndersonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,16 +677,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TKVJKXN5X;
 				INFOPLIST_FILE = MayTheForceBeWith_Anderson/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asfcarvalho.MayTheForceBeWith-Anderson";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -667,16 +698,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TKVJKXN5X;
 				INFOPLIST_FILE = MayTheForceBeWith_Anderson/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asfcarvalho.MayTheForceBeWith-Anderson";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -695,7 +729,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asfcarvalho.MayTheForceBeWith-AndersonTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MayTheForceBeWith_Anderson.app/MayTheForceBeWith_Anderson";
 			};
@@ -715,7 +749,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asfcarvalho.MayTheForceBeWith-AndersonTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MayTheForceBeWith_Anderson.app/MayTheForceBeWith_Anderson";
 			};
@@ -734,7 +768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asfcarvalho.MayTheForceBeWith-AndersonUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MayTheForceBeWith_Anderson;
 			};
@@ -753,7 +787,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asfcarvalho.MayTheForceBeWith-AndersonUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MayTheForceBeWith_Anderson;
 			};

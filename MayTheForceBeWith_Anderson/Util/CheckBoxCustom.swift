@@ -2,7 +2,7 @@
 //  CheckBoxCustom.swift
 //  GenBit
 //
-//  Created by Proaire on 05/07/19.
+//  Created by Anderson F Carvalho on 05/07/19.
 //  Copyright © 2019 Treepart. All rights reserved.
 //
 

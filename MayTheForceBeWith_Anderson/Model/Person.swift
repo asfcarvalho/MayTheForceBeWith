@@ -2,17 +2,11 @@
 //  Person.swift
 //  MayTheForceBeWith_Anderson
 //
-//  Created by Proaire on 11/07/19.
+//  Created by Anderson F Carvalho on 11/07/19.
 //  Copyright © 2019 asfcarvalho. All rights reserved.
 //
 
 import UIKit
-
-enum Gender: String, Codable {
-    case female = "female"
-    case male = "male"
-    case nA = "n/a"
-}
 
 struct Person: Codable {
     let name, height, mass, hairColor: String?
@@ -22,6 +16,7 @@ struct Person: Codable {
     let films, species, vehicles, starships: [String]?
     let created, edited: String?
     let url: String?
+    var isFavorite: Bool? = false
     
     enum CodingKeys: String, CodingKey {
         case name, height, mass
@@ -29,6 +24,6 @@ struct Person: Codable {
         case skinColor = "skin_color"
         case eyeColor = "eye_color"
         case birthYear = "birth_year"
-        case gender, homeworld, films, species, vehicles, starships, created, edited, url
+        case gender, homeworld, films, species, vehicles, starships, created, edited, url, isFavorite
     }
 }

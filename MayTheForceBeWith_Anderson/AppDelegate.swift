@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MayTheForceBeWith_Anderson
 //
-//  Created by Proaire on 10/07/19.
+//  Created by Anderson F Carvalho on 10/07/19.
 //  Copyright © 2019 asfcarvalho. All rights reserved.
 //
 
@@ -17,9 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        if CommandLine.arguments.contains("--uitesting") {
+            resetState()
+        }
+        
         window?.rootViewController = UINavigationController(rootViewController: ListPersonWireFrame.createViewController())
         
         return true
+    }
+    
+    func resetState() {
+        let defaultsName = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: defaultsName)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

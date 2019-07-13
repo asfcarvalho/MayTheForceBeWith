@@ -2,7 +2,7 @@
 //  UILabel+custom.swift
 //  GenBit
 //
-//  Created by Proaire on 01/07/19.
+//  Created by Anderson F Carvalho on 01/07/19.
 //  Copyright © 2019 Treepart. All rights reserved.
 //
 

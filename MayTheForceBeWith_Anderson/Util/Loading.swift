@@ -10,11 +10,13 @@ import UIKit
 
 class Loading {
     
-    static var shared = Loading()
+//    static var shared = Loading()
     
-    fileprivate var viewLoading: UIView?
+    fileprivate static var viewLoading: UIView?
     
-    func showLoading(_ view: UIView) {
+    static func showLoading(_ view: UIView) {
+        
+        stopLoading()
         
         viewLoading = UIView(frame: view.bounds)
         viewLoading?.backgroundColor = UIColor.gray.withAlphaComponent(0.9)
@@ -32,7 +34,7 @@ class Loading {
         
     }
     
-    func stopLoading() {
+    static func stopLoading() {
         DispatchQueue.main.async {
             self.viewLoading?.removeFromSuperview()
         }

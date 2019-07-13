@@ -2,18 +2,18 @@
 //  PeopleDataManager.swift
 //  MayTheForceBeWith_Anderson
 //
-//  Created by Proaire on 11/07/19.
+//  Created by Anderson F Carvalho on 11/07/19.
 //  Copyright © 2019 asfcarvalho. All rights reserved.
 //
 
 import UIKit
 
 class PeopleDataManager: PeopleDataManagerInputProtocol {
-    var presenter: PeopleDataManagerOutputProtocol?
+    weak var presenter: PeopleDataManagerOutputProtocol?
     
     
     func favoriteFetch() {
-        guard let url = URL(string: "http://webhook.site/47031eaa-0132-41cb-b910-0eb4cbf7c218") else {
+        guard let url = URL(string: "http://webhook.site/4d87d1ad-24aa-4ec0-8839-bfdac4670d41") else {
 
             presenter?.onError(NSLocalizedString("URLError", comment: ""))
             return
@@ -24,13 +24,27 @@ class PeopleDataManager: PeopleDataManagerInputProtocol {
 
         URLSession.shared.dataTask(with: request) { (data, _, error) in
 
-            guard let _ = data, error == nil else {
+            guard let data = data, error == nil else {
                 self.presenter?.onError(error?.localizedDescription ?? "")
                 return
             }
-
-            self.presenter?.onSuccess()
-
+            
+            do {
+                let jsonDecoder = JSONDecoder()
+                
+                let favorite = try jsonDecoder.decode(Favorite.self, from: data)
+                
+                if favorite.status == true {
+                    self.presenter?.onSuccess()
+                }else {
+                    self.presenter?.onError("")
+                }
+                
+                
+            }catch let jsonError {
+                self.presenter?.onError(jsonError.localizedDescription)
+            }
+                
             }.resume()
     }
 }

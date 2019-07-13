@@ -2,7 +2,7 @@
 //  PeoplePresenter.swift
 //  MayTheForceBeWith_Anderson
 //
-//  Created by Proaire on 11/07/19.
+//  Created by Anderson F Carvalho on 11/07/19.
 //  Copyright © 2019 asfcarvalho. All rights reserved.
 //
 
@@ -10,18 +10,19 @@ import UIKit
 
 class PeoplePresenter: PeoplePresenterProtocol {
     
-    var wireFrame: PeopleDataManagerInputProtocol?
+    var wireFrame: PeopleWireFrameProtocol?
+    var dataManager: PeopleDataManagerInputProtocol?
     var viewController: PeopleViewControllerProtocol?
     
     func setFavorite() {
         viewController?.showLoading()
-        wireFrame?.favoriteFetch()
+        dataManager?.favoriteFetch()
     }
 }
 
 extension PeoplePresenter: PeopleDataManagerOutputProtocol {
     func onSuccess() {
-        viewController?.showLoading()
+        viewController?.stopLoading()
         viewController?.onFavorite()
     }
     

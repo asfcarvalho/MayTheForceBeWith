@@ -2,7 +2,7 @@
 //  PeopleViewController.swift
 //  MayTheForceBeWith_Anderson
 //
-//  Created by Proaire on 11/07/19.
+//  Created by Anderson F Carvalho on 11/07/19.
 //  Copyright © 2019 asfcarvalho. All rights reserved.
 //
 
@@ -21,7 +21,10 @@ class PeopleViewController: UIViewController {
         
         peopleView = PeopleView(frame: self.view.frame)
         peopleView?.setupView(person)
+        peopleView?.viewController = self
         self.view = (peopleView as? UIView) ?? UIView()
+        
+        view.accessibilityIdentifier = "personView"
     }
     
     func setFavorite() {
@@ -35,11 +38,11 @@ extension PeopleViewController: PeopleViewControllerProtocol {
     }
     
     func showLoading() {
-        Loading.shared.showLoading(self.view)
+        Loading.showLoading(self.view)
     }
     
     func stopLoading() {
-        Loading.shared.stopLoading()
+        Loading.stopLoading()
     }
     
     

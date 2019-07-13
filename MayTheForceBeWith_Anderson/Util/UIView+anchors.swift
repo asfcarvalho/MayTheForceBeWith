@@ -2,7 +2,7 @@
 //  UIView+anchors.swift
 //  GenBit
 //
-//  Created by Proaire on 01/07/19.
+//  Created by Anderson F Carvalho on 01/07/19.
 //  Copyright © 2019 Treepart. All rights reserved.
 //
 
@@ -11,7 +11,11 @@ import UIKit
 extension UIView {
     
     func fillSuperview(padding: UIEdgeInsets) {
-        anchor(top: superview?.safeAreaLayoutGuide.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.safeAreaLayoutGuide.bottomAnchor, trailing: superview?.trailingAnchor, centerX: nil, centerY: nil, padding: padding)
+        if #available(iOS 11.0, *) {
+            anchor(top: superview?.safeAreaLayoutGuide.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.safeAreaLayoutGuide.bottomAnchor, trailing: superview?.trailingAnchor, centerX: nil, centerY: nil, padding: padding)
+        } else {
+            anchor(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor, centerX: nil, centerY: nil, padding: padding)
+        }
     }
     
     func fillSuperview() {

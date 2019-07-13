@@ -2,7 +2,7 @@
 //  PeopleProtocol.swift
 //  MayTheForceBeWith_Anderson
 //
-//  Created by Proaire on 11/07/19.
+//  Created by Anderson F Carvalho on 11/07/19.
 //  Copyright © 2019 asfcarvalho. All rights reserved.
 //
 
@@ -20,6 +20,9 @@ protocol PeopleViewControllerProtocol {
 }
 
 protocol PeopleViewProtocol {
+    
+    var viewController: PeopleViewControllerProtocol? {  get set }
+    
     func setupView(_ person: Person?)
     
     func onFavorite()
@@ -40,14 +43,15 @@ protocol PeopleDataManagerInputProtocol {
     
 }
 
-protocol PeopleDataManagerOutputProtocol {
+protocol PeopleDataManagerOutputProtocol: class {
     func onSuccess()
     func onError(_ message: String)
 }
 
 protocol PeoplePresenterProtocol {
     
-    var wireFrame: PeopleDataManagerInputProtocol? { get set }
+    var wireFrame: PeopleWireFrameProtocol? { get set }
+    var dataManager: PeopleDataManagerInputProtocol? { get set }
     var viewController: PeopleViewControllerProtocol? { get set }
     
     func setFavorite()

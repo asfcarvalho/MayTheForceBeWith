@@ -23,10 +23,12 @@ class PeopleWireFrame: PeopleWireFrameProtocol {
         presenter.dataManager = dataManager
         dataManager.presenter = presenter
         
-//        viewController.
-        
         return viewController
     }
-    
+    func showAlert(_ viewController: PeopleViewControllerProtocol?, _ message: String) {
+        guard let viewController = viewController as? UIViewController else { return }
+        
+        UIAlertCustom.shared.showAlert(from: viewController, message: message)
+    }
     
 }

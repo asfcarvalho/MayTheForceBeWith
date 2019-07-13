@@ -31,5 +31,7 @@ extension PeoplePresenter: PeopleDataManagerOutputProtocol {
         
     }
     
-    
+    func showAlert(_ message: String) {
+        wireFrame?.showAlert(viewController, message)
+    }
 }

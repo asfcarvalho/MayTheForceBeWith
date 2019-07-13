@@ -45,5 +45,7 @@ extension PeopleViewController: PeopleViewControllerProtocol {
         Loading.stopLoading()
     }
     
-    
+    func showError(_ message: String) {
+        presenter?.showAlert(message)
+    }
 }

@@ -14,6 +14,7 @@ protocol PeopleViewControllerProtocol {
     var presenter: PeoplePresenterProtocol? { get set }
     
     func onFavorite()
+    func showError(_ message: String)
     func setFavorite()
     func showLoading()
     func stopLoading()
@@ -32,6 +33,7 @@ protocol PeopleWireFrameProtocol {
     
     static func createViewController(_ person: Person?) -> UIViewController
     
+    func showAlert(_ viewController: PeopleViewControllerProtocol?, _ message: String)
 }
 
 
@@ -55,5 +57,5 @@ protocol PeoplePresenterProtocol {
     var viewController: PeopleViewControllerProtocol? { get set }
     
     func setFavorite()
-    
+    func showAlert(_ message: String)
 }
